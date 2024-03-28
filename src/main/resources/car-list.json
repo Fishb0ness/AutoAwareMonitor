@@ -1,0 +1,334 @@
+[
+  {
+    "brand": "Seat",
+    "model": "Alhambra"
+  },
+  {
+    "brand": "Seat",
+    "model": "Altea"
+  },
+  {
+    "brand": "Seat",
+    "model": "Toledo"
+  },
+  {
+    "brand": "Renault",
+    "model": "Captur"
+  },
+  {
+    "brand": "Renault",
+    "model": "Clio"
+  },
+  {
+    "brand": "Smart",
+    "model": "Roadster"
+  },
+  {
+    "brand": "Mazda",
+    "model": "Mx5"
+  },
+  {
+    "brand": "Mazda",
+    "model": "Mx6"
+  },
+  {
+    "brand": "Mazda",
+    "model": "Mx3"
+  },
+  {
+    "brand": "Mazda",
+    "model": "Rx7"
+  },
+  {
+    "brand": "Mazda",
+    "model": "Rx8"
+  },
+  {
+    "brand": "Mazda",
+    "model": "Cx3"
+  },
+  {
+    "brand": "Mazda",
+    "model": "Cx5"
+  },
+  {
+    "brand": "Mazda",
+    "model": "Cx7"
+  },
+  {
+    "brand": "Mazda",
+    "model": "Cx9"
+  },
+  {
+    "brand": "Mazda",
+    "model": "Mpv"
+  },
+  {
+    "brand": "Mazda",
+    "model": "Premacy"
+  },
+  {
+    "brand": "Mazda",
+    "model": "Demio"
+  },
+  {
+    "brand": "Mazda",
+    "model": "B2500"
+  },
+  {
+    "brand": "Mazda",
+    "model": "Bfighter"
+  },
+  {
+    "brand": "Mazda",
+    "model": "323"
+  },
+  {
+    "brand": "Mazda",
+    "model": "323 Combi"
+  },
+  {
+    "brand": "Mazda",
+    "model": "323 Coupé"
+  },
+  {
+    "brand": "Mazda",
+    "model": "323 F"
+  },
+  {
+    "brand": "Mazda",
+    "model": "626"
+  },
+  {
+    "brand": "Mazda",
+    "model": "626 Combi"
+  },
+  {
+    "brand": "Mazda",
+    "model": "Xedox 6"
+  },
+  {
+    "brand": "Mazda",
+    "model": "2"
+  },
+  {
+    "brand": "Mazda",
+    "model": "3"
+  },
+  {
+    "brand": "Mazda",
+    "model": "5"
+  },
+  {
+    "brand": "Mazda",
+    "model": "6"
+  },
+  {
+    "brand": "Mazda",
+    "model": "6 Combi"
+  },
+  {
+    "brand": "Mazda",
+    "model": "121"
+  },
+  {
+    "brand": "Mazda",
+    "model": "929"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "100 D"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "115"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "124"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "126"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "190"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "190 D"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "190 E"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "200 - 300"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "200 D"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "200 E"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "210 Van"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "210 kombi"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "310 Van"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "310 kombi"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "230 - 300 CE Coupé"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "260 - 560 SE"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "260 - 560 SEL"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "500 - 600 SEC Coupé"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "Trieda A"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "A"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "A L"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "AMG GT"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "Trieda B"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "Trieda C"
+  },
+  {
+    "brand": "Mercedes-Benz",
+    "model": "C"
+  },
+  {
+    "brand": "Opel",
+    "model": "Agila"
+  },
+  {
+    "brand": "Opel",
+    "model": "Ampera"
+  },
+  {
+    "brand": "Opel",
+    "model": "Antara"
+  },
+  {
+    "brand": "Opel",
+    "model": "Astra"
+  },
+  {
+    "brand": "Opel",
+    "model": "Astra cabrio"
+  },
+  {
+    "brand": "Opel",
+    "model": "Astra caravan"
+  },
+  {
+    "brand": "Opel",
+    "model": "Astra coupé"
+  },
+  {
+    "brand": "Opel",
+    "model": "Calibra"
+  },
+  {
+    "brand": "Opel",
+    "model": "Campo"
+  },
+  {
+    "brand": "Opel",
+    "model": "Cascada"
+  },
+  {
+    "brand": "Opel",
+    "model": "Corsa"
+  },
+  {
+    "brand": "Opel",
+    "model": "Frontera"
+  },
+  {
+    "brand": "Opel",
+    "model": "Insignia"
+  },
+  {
+    "brand": "Opel",
+    "model": "Insignia kombi"
+  },
+  {
+    "brand": "Opel",
+    "model": "Kadett"
+  },
+  {
+    "brand": "Opel",
+    "model": "Meriva"
+  },
+  {
+    "brand": "Opel",
+    "model": "Mokka"
+  },
+  {
+    "brand": "Opel",
+    "model": "Movano"
+  },
+  {
+    "brand": "Opel",
+    "model": "Omega"
+  },
+  {
+    "brand": "Opel",
+    "model": "Signum"
+  },
+  {
+    "brand": "Opel",
+    "model": "Vectra"
+  },
+  {
+    "brand": "Opel",
+    "model": "Vectra Caravan"
+  },
+  {
+    "brand": "Opel",
+    "model": "Vivaro"
+  },
+  {
+    "brand": "Opel",
+    "model": "Vivaro Kombi"
+  }
+]
