@@ -2,6 +2,7 @@ package com.fishb0ness.autoawaremonitor.application;
 
 import com.fishb0ness.autoawaremonitor.domain.fueling.Fueling;
 import com.fishb0ness.autoawaremonitor.domain.fueling.FuelingId;
+import com.fishb0ness.autoawaremonitor.domain.vehicle.VehicleId;
 import com.fishb0ness.autoawaremonitor.domain.vehicle.VehicleModelId;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public interface FuelingUseCases {
 
     Optional<Fueling> getFuelingById(FuelingId fuelingId);
 
-    List<Fueling> getAllFuelingByVehicleId(FuelingId vehicleId);
+    List<Fueling> getAllFuelingByVehicleId(VehicleId vehicleId);
 
     Optional<Fueling> updateFuelingInfo(Fueling newfueling);
 
