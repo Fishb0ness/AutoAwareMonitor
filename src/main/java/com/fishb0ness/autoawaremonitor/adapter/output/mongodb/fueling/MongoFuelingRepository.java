@@ -74,7 +74,7 @@ public class MongoFuelingRepository implements FuelingRepository {
         fuelingDTO.setFirstFueling(fueling.isFirstTank());
         fuelingDTO.setDistance(fueling.getMileage().getDistance());
         fuelingDTO.setDistanceUnit(fueling.getMileage().getDistanceMeasure().name());
-        fuelingDTO.setFuelingAmount(fueling.getRefuelVolume().getVolume());
+        fuelingDTO.setFuelingAmount(fueling.getRefuelVolume().getQuantity());
         fuelingDTO.setFuelingAmountUnit(fueling.getRefuelVolume().getVolumeMeasure().name());
         fuelingDTO.setFuelingPrice(fueling.getPaidPrice().getAmount());
         fuelingDTO.setFuelingPriceUnit(fueling.getPaidPrice().getCurrency().getCurrencyCode());
