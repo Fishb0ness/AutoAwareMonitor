@@ -1,27 +1,24 @@
 package com.fishb0ness.autoawaremonitor.domain.measures;
 
-import com.fishb0ness.autoawaremonitor.domain.measures.VolumeMeasure;
-
 public class Volume {
 
-    private double volume;
+    private double quantity;
     private VolumeMeasure volumeMeasure;
 
-    public Volume(double volume, VolumeMeasure volumeMeasure) {
+    public Volume(double quantity, VolumeMeasure volumeMeasure) {
+        setQuantity(quantity);
         this.volumeMeasure = volumeMeasure;
-        if (volumeMeasure == VolumeMeasure.LITERS) {
-            this.volume = volume;
-        } else if(volumeMeasure == VolumeMeasure.GALLONS){
-            this.volume = volume * 3.78541;
+    }
+
+    public double getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(double quantity) {
+        if (quantity < 0) {
+            throw new IllegalArgumentException("Quantity cannot be less than 0");
         }
-    }
-
-    public double getVolume() {
-        return volume;
-    }
-
-    public void setVolume(double volume) {
-        this.volume = volume;
+        this.quantity = quantity;
     }
 
     public VolumeMeasure getVolumeMeasure() {
@@ -30,5 +27,26 @@ public class Volume {
 
     public void setVolumeMeasure(VolumeMeasure volumeMeasure) {
         this.volumeMeasure = volumeMeasure;
+    }
+
+    public double getVolumeInGallons() {
+        return convertTo(VolumeMeasure.GALLONS);
+    }
+
+    public double getVolumeInLiters() {
+        return convertTo(VolumeMeasure.LITERS);
+    }
+
+    private double convertTo(VolumeMeasure volumeMeasure) {
+        if (this.volumeMeasure == volumeMeasure) {
+            return quantity;
+        }
+        if (this.volumeMeasure == VolumeMeasure.LITERS && volumeMeasure == VolumeMeasure.GALLONS) {
+            return quantity * 0.264172;
+        }
+        if (this.volumeMeasure == VolumeMeasure.GALLONS && volumeMeasure == VolumeMeasure.LITERS) {
+        return quantity * 3.78541;
+        }
+        throw new IllegalArgumentException("Conversion from " + this.volumeMeasure + " to " + volumeMeasure + " is not supported.");
     }
 }
