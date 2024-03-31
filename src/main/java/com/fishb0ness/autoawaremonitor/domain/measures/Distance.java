@@ -15,4 +15,20 @@ public class Distance {
                 this.distance = distance * 1.60934;
             }
         }
+
+    public double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(double distance) {
+        this.distance = distance;
+    }
+
+    public DistanceMeasure getDistanceMeasure() {
+        return distanceMeasure;
+    }
+
+    public void setDistanceMeasure(DistanceMeasure distanceMeasure) {
+        this.distanceMeasure = distanceMeasure;
+    }
 }
