@@ -2,7 +2,6 @@ package com.fishb0ness.autoawaremonitor.adapter.output.mongodb.vehicle;
 
 import com.fishb0ness.autoawaremonitor.domain.user.UserId;
 import com.fishb0ness.autoawaremonitor.domain.vehicle.*;
-import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,12 +12,10 @@ public class MongoVehicleRepository implements VehicleRepository {
 
     private final VehicleMongoRepository vehicleMongoRepository;
     private final VehicleModelMongoRepository vehicleModelMongoRepository;
-    private final MongoOperations mongoOperations;
 
-    public MongoVehicleRepository(VehicleMongoRepository vehicleMongoRepository, VehicleModelMongoRepository vehicleModelMongoRepository, MongoOperations mongoOperations) {
+    public MongoVehicleRepository(VehicleMongoRepository vehicleMongoRepository, VehicleModelMongoRepository vehicleModelMongoRepository) {
         this.vehicleMongoRepository = vehicleMongoRepository;
         this.vehicleModelMongoRepository = vehicleModelMongoRepository;
-        this.mongoOperations = mongoOperations;
     }
 
     public Vehicle saveVehicle(Vehicle vehicle) {
@@ -74,14 +71,6 @@ public class MongoVehicleRepository implements VehicleRepository {
     public VehicleModel saveVehicleModel(String brand, String model) {
         VehicleModel vehicleModel = new VehicleModel(brand, model);
         VehicleModelMongoOutDTO vehicleModelMongoOutDto = toVehicleModelDto(vehicleModel);
-
-        /*
-        Query query = new Query();
-        query.addCriteria(Criteria.where("modelId").is(vehicleModelId.id()));
-        FindAndReplaceOptions options = new FindAndReplaceOptions().upsert();
-
-        return toVehicleModel(Objects.requireNonNull(mongoOperations.findAndReplace(query, vehicleModelMongoOutDto, options, "vehicleModel")));
-         */
         return toVehicleModel(vehicleModelMongoRepository.insert(vehicleModelMongoOutDto));
     }
 
