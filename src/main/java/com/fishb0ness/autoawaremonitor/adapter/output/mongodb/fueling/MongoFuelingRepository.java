@@ -5,44 +5,46 @@ import com.fishb0ness.autoawaremonitor.domain.fueling.FuelingId;
 import com.fishb0ness.autoawaremonitor.domain.fueling.FuelingRepository;
 import com.fishb0ness.autoawaremonitor.domain.measures.*;
 import com.fishb0ness.autoawaremonitor.domain.vehicle.VehicleId;
+import org.springframework.stereotype.Service;
 
 import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
 import java.util.Currency;
 
+@Service
 public class MongoFuelingRepository implements FuelingRepository {
 
-    private final FuelingMongoRespository fuelingMongoRespository;
+    private final FuelingMongoRepository fuelingMongoRepository;
 
-    public MongoFuelingRepository(FuelingMongoRespository fuelingMongoRespository) {
-        this.fuelingMongoRespository = fuelingMongoRespository;
+    public MongoFuelingRepository(FuelingMongoRepository fuelingMongoRepository) {
+        this.fuelingMongoRepository = fuelingMongoRepository;
     }
 
     @Override
     public Fueling saveFueling(Fueling fueling) {
         FuelingMongoOutDTO vehicleMongoOutDTO = toFuelingDTO(fueling);
-        return toFueling(fuelingMongoRespository.insert(vehicleMongoOutDTO));
+        return toFueling(fuelingMongoRepository.insert(vehicleMongoOutDTO));
     }
 
     @Override
     public Optional<Fueling> getFueling(FuelingId fuelingId) {
-        Optional<FuelingMongoOutDTO> optionalFuelingMongoOutDto = fuelingMongoRespository.findByFuelingId(fuelingId.id());
+        Optional<FuelingMongoOutDTO> optionalFuelingMongoOutDto = fuelingMongoRepository.findByFuelingId(fuelingId.id());
         return optionalFuelingMongoOutDto.map(this::toFueling);
     }
 
     @Override
     public List<Fueling> getAllFuelingByVehicleId(VehicleId vehicleId) {
-        return fuelingMongoRespository.findByVehicleId(vehicleId.id()).stream().map(this::toFueling).toList();
+        return fuelingMongoRepository.findByVehicleId(vehicleId.id()).stream().map(this::toFueling).toList();
     }
 
     @Override
     public Optional<Fueling> updateFueling(Fueling fueling) {
-        Optional<FuelingMongoOutDTO> optionalFuelingMongoOutDto = fuelingMongoRespository.findByFuelingId(fueling.getId().id());
+        Optional<FuelingMongoOutDTO> optionalFuelingMongoOutDto = fuelingMongoRepository.findByFuelingId(fueling.getId().id());
         if (optionalFuelingMongoOutDto.isEmpty()) {
             return Optional.empty();
         } else if (optionalFuelingMongoOutDto.get().getVehicleId().equals(fueling.getVehicleId().id())) {
-            return Optional.of(toFueling(fuelingMongoRespository.save(toFuelingDTO(fueling))));
+            return Optional.of(toFueling(fuelingMongoRepository.save(toFuelingDTO(fueling))));
         } else {
             return Optional.empty();
         }
@@ -50,7 +52,7 @@ public class MongoFuelingRepository implements FuelingRepository {
 
     @Override
     public long deleteFueling(FuelingId fuelingId) {
-        return fuelingMongoRespository.deleteByFuelingId(fuelingId.id());
+        return fuelingMongoRepository.deleteByFuelingId(fuelingId.id());
     }
 
     private Fueling toFueling(FuelingMongoOutDTO fuelingMongoOutDto) {
@@ -70,8 +72,8 @@ public class MongoFuelingRepository implements FuelingRepository {
         fuelingDTO.setFuelingId(fueling.getId().id());
         fuelingDTO.setVehicleId(fueling.getVehicleId().id());
         fuelingDTO.setFuelingDate(fueling.getDate());
-        fuelingDTO.setFullFueling(fueling.isFullTank());
-        fuelingDTO.setFirstFueling(fueling.isFirstTank());
+        fuelingDTO.setFullFueling(fueling.getIsFullTank());
+        fuelingDTO.setFirstFueling(fueling.getIsFirstTank());
         fuelingDTO.setDistance(fueling.getMileage().getDistance());
         fuelingDTO.setDistanceUnit(fueling.getMileage().getDistanceMeasure().name());
         fuelingDTO.setFuelingAmount(fueling.getRefuelVolume().getQuantity());

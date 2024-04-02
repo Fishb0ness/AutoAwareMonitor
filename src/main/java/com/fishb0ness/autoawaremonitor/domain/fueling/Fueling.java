@@ -53,19 +53,19 @@ public class Fueling {
         this.date = date;
     }
 
-    public boolean isFullTank() {
+    public boolean getIsFullTank() {
         return isFullTank;
     }
 
-    public void setFullTank(boolean fullTank) {
+    public void setIsFullTank(boolean fullTank) {
         isFullTank = fullTank;
     }
 
-    public boolean isFirstTank() {
+    public boolean getIsFirstTank() {
         return isFirstTank;
     }
 
-    public void setFirstTank(boolean firstTank) {
+    public void setIsFirstTank(boolean firstTank) {
         isFirstTank = firstTank;
     }
 
@@ -91,5 +91,13 @@ public class Fueling {
 
     public void setPaidPrice(Money paidPrice) {
         this.paidPrice = paidPrice;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Fueling fueling = (Fueling) o;
+        return isFullTank == fueling.isFullTank && isFirstTank == fueling.isFirstTank && id.equals(fueling.id) && vehicleId.equals(fueling.vehicleId) && date.equals(fueling.date) && mileage.equals(fueling.mileage) && refuelVolume.equals(fueling.refuelVolume) && paidPrice.equals(fueling.paidPrice);
     }
 }

@@ -49,4 +49,12 @@ public class Volume {
         }
         throw new IllegalArgumentException("Conversion from " + this.volumeMeasure + " to " + volumeMeasure + " is not supported.");
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Volume volume = (Volume) o;
+        return Double.compare(volume.quantity, quantity) == 0 && volumeMeasure == volume.volumeMeasure;
+    }
 }

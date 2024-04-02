@@ -43,4 +43,12 @@ public class Money {
     private void validateCurrency(Currency currency) {
         Objects.requireNonNull(currency, "Currency cannot be null");
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Money money = (Money) o;
+        return amount.compareTo(money.amount) == 0 && currency.equals(money.currency);
+    }
 }

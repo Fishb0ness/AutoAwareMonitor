@@ -8,7 +8,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public interface FuelingMongoRespository extends MongoRepository<FuelingMongoOutDTO, Long> {
+public interface FuelingMongoRepository extends MongoRepository<FuelingMongoOutDTO, Long> {
 
     Optional<FuelingMongoOutDTO> findByFuelingId(UUID fuelingId);
 

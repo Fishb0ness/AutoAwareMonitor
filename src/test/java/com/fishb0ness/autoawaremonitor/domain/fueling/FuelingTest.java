@@ -35,13 +35,13 @@ public class FuelingTest {
     @Test
     public void fuelingIsFullTankIsStoredCorrectly() {
         Fueling fueling = new Fueling(new FuelingId(), new VehicleId(UUID.randomUUID()), Instant.now(), true, true, new Distance(100.0, DistanceMeasure.KILOMETERS), new Volume(50.0, VolumeMeasure.LITERS), new Money(new BigDecimal("50.0"), Currency.getInstance("USD")));
-        Assertions.assertTrue(fueling.isFullTank());
+        Assertions.assertTrue(fueling.getIsFullTank());
     }
 
     @Test
     public void fuelingIsFirstTankIsStoredCorrectly() {
         Fueling fueling = new Fueling(new FuelingId(), new VehicleId(UUID.randomUUID()), Instant.now(), true, true, new Distance(100.0, DistanceMeasure.KILOMETERS), new Volume(50.0, VolumeMeasure.LITERS), new Money(new BigDecimal("50.0"), Currency.getInstance("USD")));
-        Assertions.assertTrue(fueling.isFirstTank());
+        Assertions.assertTrue(fueling.getIsFirstTank());
     }
 
     @Test

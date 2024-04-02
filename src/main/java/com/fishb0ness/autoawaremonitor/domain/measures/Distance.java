@@ -49,4 +49,13 @@ public class Distance {
         }
         throw new IllegalArgumentException("Conversion from " + this.distanceMeasure + " to " + distanceMeasure + " is not supported.");
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Distance that = (Distance) o;
+        if (Double.compare(that.distance, distance) != 0) return false;
+        return distanceMeasure.equals(that.distanceMeasure);
+    }
 }
