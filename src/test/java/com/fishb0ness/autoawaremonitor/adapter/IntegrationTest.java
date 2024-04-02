@@ -28,7 +28,8 @@ public abstract class IntegrationTest {
                 .withEnv("MONGO_INITDB_ROOT_USERNAME", MONGO_DB_USERNAME)
                 .withEnv("MONGO_INITDB_ROOT_PASSWORD", MONGO_DB_PASSWORD)
                 .withEnv("MONGO_INITDB_DATABASE", MONGO_DB_NAME)
-                .withCommand("--auth");
+                .withCommand("--auth")
+                .withStartupAttempts(4);
     }
 
 
